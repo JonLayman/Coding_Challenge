@@ -23,7 +23,6 @@ const findFrequency = function(array) {
             least = array[i];
         }
     }
-
     return { most: most, least: least };
 };
 
