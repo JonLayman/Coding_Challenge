@@ -1,7 +1,10 @@
 const findSum = function(array) {
- let sum = 0;
+  let sum = 0;
     array.forEach(function (num) {
         sum += num;
+    });
+    return sum;
+     
 };
 
 const findFrequency = function(array) {
