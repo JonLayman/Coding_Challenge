@@ -8,25 +8,24 @@ const findSum = function(array) {
 };
 
 const findFrequency = function(array) {
-  let obj = {};
-    let most = array[0];
-    let least = array[0];
-    for (let i = 0; i < array.length; i++) {
-        let letter = array[i];
-
-        if (obj[letter]) {
-            obj[letter]++
-        } else {
-            obj[letter] = 1;
+     const obj = {};
+    for (const word of array) {
+        if (!obj.hasOwnProperty(word)) {
+            obj[word] = 0
         }
-        if (obj[array[i]] > obj[most]) {
-            most = array[i];
+        obj[word]++;
+    }
+    let least = null;
+    let most = null;
+    for (const element in obj) {
+        if (!least || obj[element] < obj[least]) {
+            least = element
         }
-        if (obj[array[i]] < obj[least]) {
-            least = array[i];
+        if (!most || obj[element] > obj[most]) {
+            most = element
         }
     }
-    return { most: most, least: least };
+    return { most: most, least: least }
 };
 
 const isPalindrome = function(str) {
